@@ -98,5 +98,30 @@ function updateBubbleColor() {
   textarea.style.setProperty("--bubble-color", color);
 }
 
-// Call once on page load to initialize
 updateBubbleColor();
+
+const themeToggle = document.getElementById("themeToggle");
+  const app = document.querySelector(".app-container");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+    app.classList.remove("light");
+    app.classList.add("dark");
+    themeToggle.textContent = "☀️ Light Mode";
+  } else {
+    app.classList.remove("dark");
+    app.classList.add("light");
+    themeToggle.textContent = "🌙 Dark Mode";
+  }
+
+  themeToggle.addEventListener("click", () => {
+    if (app.classList.contains("dark")) {
+      app.classList.replace("dark", "light");
+      localStorage.setItem("theme", "light");
+      themeToggle.textContent = "🌙 Dark Mode";
+    } else {
+      app.classList.replace("light", "dark");
+      localStorage.setItem("theme", "dark");
+      themeToggle.textContent = "☀️ Light Mode";
+    }
+  });
