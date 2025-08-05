@@ -423,6 +423,9 @@ background-color: #fbe9e7;
   padding: 4rem 0 0 2rem;
 }
 
+.app-container.dark .emotion-box h3 {
+  color: #000;
+}
 
 
 
