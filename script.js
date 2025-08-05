@@ -100,6 +100,7 @@ function updateBubbleColor() {
 
 updateBubbleColor();
 
+
 const themeToggle = document.getElementById("themeToggle");
   const app = document.querySelector(".app-container");
   const savedTheme = localStorage.getItem("theme");
@@ -125,3 +126,5 @@ const themeToggle = document.getElementById("themeToggle");
       themeToggle.textContent = "☀️ Light Mode";
     }
   });
+
+  
